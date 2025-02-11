@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/CMakeFiles/led_blink_timer"
+		},
+		{
+			"file" : "D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/CMakeFiles/led_blink_timer.rule"
+		},
+		{
+			"file" : "D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/CMakeFiles/led_blink_timer-complete.rule"
+		},
+		{
+			"file" : "D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-build.rule"
+		},
+		{
+			"file" : "D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-configure.rule"
+		},
+		{
+			"file" : "D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-download.rule"
+		},
+		{
+			"file" : "D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-install.rule"
+		},
+		{
+			"file" : "D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-mkdir.rule"
+		},
+		{
+			"file" : "D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-patch.rule"
+		},
+		{
+			"file" : "D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"led_blink_timer"
+		],
+		"name" : "led_blink_timer"
+	}
+}

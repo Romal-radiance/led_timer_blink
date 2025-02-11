@@ -1,0 +1,2 @@
+osource "D:/GitHub/led_timer_blink/led_blink_timer/boards/shields/*/Kconfig.shield"
+osource "D:/ncs/v2.9.0/nrf/boards/shields/*/Kconfig.shield"

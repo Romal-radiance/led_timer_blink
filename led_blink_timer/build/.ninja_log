@@ -1,0 +1,11 @@
+# ninja log v5
+2	257	7609559384280064	_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-mkdir	86a208d50e320965
+2	257	7609559384280064	D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-mkdir	86a208d50e320965
+257	336	7609559385077872	_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-download	f8ce7f0a6533f3a4
+257	336	7609559385077872	D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-download	f8ce7f0a6533f3a4
+336	416	7609559385869170	_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-update	a48328c3063f0f49
+336	416	7609559385869170	D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-update	a48328c3063f0f49
+420	500	7609559386726802	_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-patch	8b6246014b9b1223
+420	500	7609559386726802	D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-patch	8b6246014b9b1223
+500	578	7609559387504665	_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-configure	f066736a660f5d55
+500	578	7609559387504665	D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-configure	f066736a660f5d55

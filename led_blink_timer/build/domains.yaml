@@ -1,0 +1,7 @@
+default: led_blink_timer
+build_dir: D:/GitHub/led_timer_blink/led_blink_timer/build
+domains:
+  - name: led_blink_timer
+    build_dir: D:/GitHub/led_timer_blink/led_blink_timer/build/led_blink_timer
+flash_order:
+  - led_blink_timer

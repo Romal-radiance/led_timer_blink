@@ -1,0 +1,13 @@
+# Target labels
+ led_blink_timer
+# Source files and their labels
+D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/CMakeFiles/led_blink_timer
+D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/CMakeFiles/led_blink_timer.rule
+D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/CMakeFiles/led_blink_timer-complete.rule
+D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-build.rule
+D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-configure.rule
+D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-download.rule
+D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-install.rule
+D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-mkdir.rule
+D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-patch.rule
+D:/GitHub/led_timer_blink/led_blink_timer/build/_sysbuild/sysbuild/images/led_blink_timer-prefix/src/led_blink_timer-stamp/led_blink_timer-update.rule
