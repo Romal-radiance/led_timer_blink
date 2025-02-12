@@ -63,8 +63,8 @@ static struct bt_conn *auth_conn;
 
 static const struct device *uart = DEVICE_DT_GET(DT_CHOSEN(nordic_nus_uart));
 static struct k_work_delayable uart_work;
-static int AFTER = 100;
-static int BEFORE = 100;
+static int LED_CONTROL = 100;
+static int INTERVAL = 100;
 struct uart_data_t
 {
 	void *fifo_reserved;
@@ -89,19 +89,25 @@ UART_ASYNC_ADAPTER_INST_DEFINE(async_adapter);
 #else
 #define async_adapter NULL
 #endif
+struct k_timer main_timer;
+struct k_timer led_timer;
+void led_timer_handler(struct k_timer *timer_id)
+{
+    dk_set_led(RUN_STATUS_LED, 0); 
+}
+void main_timer_handler(struct k_timer *timer_id)
+{
+    dk_set_led(RUN_STATUS_LED, 1);  
+    k_timer_start(&led_timer, K_MSEC(LED_CONTROL), K_MSEC(LED_CONTROL));  
+}
 static void convert(uint8_t *rx_buffer, size_t len)
 {
-	if (len != 11)
-		return;
-	char hex_id[3] = {rx_buffer[0], rx_buffer[1], '\0'};
-	char hex_before[5] = {rx_buffer[2], rx_buffer[3], rx_buffer[4], rx_buffer[5], '\0'};
-	char hex_after[5] = {rx_buffer[6], rx_buffer[7], rx_buffer[8], rx_buffer[9], '\0'};
-
-	int ID = strtol(hex_id, NULL, 16);
-	BEFORE = strtol(hex_before, NULL, 16);
-	AFTER = strtol(hex_after, NULL, 16);
-
-	printk("ID: %d, BEFORE: %d, AFTER: %d\n", ID, BEFORE, AFTER);
+	int ID= rx_buffer[0];
+	INTERVAL = rx_buffer[1]<<8 | rx_buffer[2];
+	LED_CONTROL = rx_buffer[3]<<8 | rx_buffer[4];
+	k_timer_stop(&main_timer);
+	k_timer_start(&main_timer, K_MSEC(INTERVAL), K_MSEC(INTERVAL));
+	printk("ID: %d, INTERVAL: %d, LED_CONTROL: %d\n", ID, INTERVAL, LED_CONTROL);
 }
 static void uart_cb(const struct device *dev, struct uart_event *evt, void *user_data)
 {
