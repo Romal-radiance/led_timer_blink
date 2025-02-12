@@ -666,6 +666,9 @@ int main(void)
 	int err = 0;
 
 	configure_gpio();
+	k_timer_init(&main_timer, main_timer_handler, NULL);
+    k_timer_init(&led_timer, led_timer_handler, NULL);
+	k_timer_start(&main_timer, K_SECONDS(1), K_SECONDS(1));
 	err = uart_init();
 	if (err)
 	{
