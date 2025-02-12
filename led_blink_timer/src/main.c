@@ -159,24 +159,21 @@ static void uart_cb(const struct device *dev, struct uart_event *evt, void *user
 		break;
 
 	case UART_RX_RDY:
-		LOG_DBG("UART_RX_RDY");
-		memcpy(rx_buffer + rx_len, evt->data.rx.buf, evt->data.rx.len);
-		rx_len += evt->data.rx.len;
-		printk("%c", evt->data.rx.buf[evt->data.rx.len - 1]);
-		if (disable_req)
-		{
-			return;
-		}
-		if (rx_len > 0 && (rx_buffer[rx_len - 1] == '\n' || rx_buffer[rx_len - 1] == '\r'))
-		{
-			if (((uint8_t *)rx_buffer)[0] == 48 && ((uint8_t *)rx_buffer)[1] == 49 && rx_len == 11)
-			{
-				convert(rx_buffer, rx_len);
-			}
-			rx_len = 0;
-		}
-
-		break;
+	LOG_DBG("UART_RX_RDY");
+	memcpy(rx_buffer + rx_len, evt->data.rx.buf, evt->data.rx.len);
+	rx_len += evt->data.rx.len;
+	printk("%c", evt->data.rx.buf[evt->data.rx.len - 1]);
+	if (disable_req)
+	{
+		return;
+	}
+	if(rx_len == 5)
+	{
+		printk("\nlen =%d \n",rx_len);
+		convert(rx_buffer, rx_len);
+		rx_len = 0;
+	}
+	break;
 
 	case UART_RX_DISABLED:
 		LOG_DBG("UART_RX_DISABLED");
