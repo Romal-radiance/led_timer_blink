@@ -57,8 +57,7 @@ LOG_MODULE_REGISTER(LOG_MODULE_NAME);
 #define UART_WAIT_FOR_BUF_DELAY K_MSEC(50)
 #define UART_WAIT_FOR_RX CONFIG_BT_NUS_UART_RX_WAIT_TIME
 
-// static K_SEM_DEFINE(ble_init_ok, 0, 1);
-// struct k_timer led_timer;
+ static K_SEM_DEFINE(ble_init_ok, 0, 1);
 static struct bt_conn *current_conn;
 static struct bt_conn *auth_conn;
 
@@ -90,24 +89,6 @@ UART_ASYNC_ADAPTER_INST_DEFINE(async_adapter);
 #else
 #define async_adapter NULL
 #endif
-void led_control_handler(struct k_timer *timer_id);
-
-K_TIMER_DEFINE(led_timer, led_control_handler, NULL);
-
-void led_control_handler(struct k_timer *timer_id)
-{
-	static bool led_on = false;
-
-    if (led_on) {
-        dk_set_led(RUN_STATUS_LED, 0);  // Turn LED OFF
-        k_timer_start(&led_timer, K_MSEC(BEFORE), K_NO_WAIT);  // Wait 900ms
-    } else {
-        dk_set_led(RUN_STATUS_LED, 1);  // Turn LED ON
-        k_timer_start(&led_timer, K_MSEC(AFTER), K_NO_WAIT);  // Keep ON for 100ms
-    }
-
-    led_on = !led_on;
-}
 static void convert(uint8_t *rx_buffer, size_t len)
 {
 	if (len != 11)
@@ -182,7 +163,6 @@ static void uart_cb(const struct device *dev, struct uart_event *evt, void *user
 		}
 		if (rx_len > 0 && (rx_buffer[rx_len - 1] == '\n' || rx_buffer[rx_len - 1] == '\r'))
 		{
-			// printk("\n%d %d\n", rx_len, ((uint8_t *)rx_buffer)[0]);
 			if (((uint8_t *)rx_buffer)[0] == 48 && ((uint8_t *)rx_buffer)[1] == 49 && rx_len == 11)
 			{
 				convert(rx_buffer, rx_len);
@@ -683,8 +663,6 @@ int main(void)
 	int err = 0;
 
 	configure_gpio();
-	//k_timer_init(&led_timer, led_control_handler, NULL);
-	//k_timer_start(&led_timer, K_NO_WAIT, K_NO_WAIT);
 	err = uart_init();
 	if (err)
 	{
